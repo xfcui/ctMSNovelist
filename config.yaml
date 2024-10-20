@@ -1,0 +1,48 @@
+base_folder: /home/sf123/ctMSNovelist
+batch_size: 256
+key_ls: ["fold0", "fold1", "fold2", "fold3", "fold4", "fold5", "fold6", "fold7", "fold8", "fold9"]
+#============================train=======================================
+db_path: /home/sf123/MS_DATA/combined_0824_v44.db
+table_name: "compounds"
+map_path: /home/sf123/MS_DATA/csi_fingerid.csv
+#============================test=======================================
+pkl_src_path: /home/sf123/ctMSNovelist/data/complete_folds_smiles_holdout_me.pkl
+pkl_org_path: /home/sf123/MS_DATA/org_test_data.pkl
+
+all_path: /home/sf123/MS_DATA/org_all_data.pkl
+gnps_path: /home/sf123/MS_DATA/org_gnps_data.pkl
+casmi_path: /home/sf123/MS_DATA/org_casmi_data.pkl
+canopus_path: /home/sf123/MS_DATA/org_canopus_data.pkl
+
+weights_folder: /data/weights/V3.1/r2
+eval_folder: /cache/
+cv_fold: 0
+cv_folds: 10
+eval_set: gnps
+#eval_set: casmi
+
+weight_file: 0-30-0.043-0.0485-0.1053.pth
+
+#epochs: 5
+#eval_detail: false
+eval_k: 128
+eval_kk: 128
+eval_n: 8
+#eval_n_total: 126
+#eval_steps: 128
+#eval_steps: 127
+eval_temperature: 1.0
+eval_top_n: 1
+f1_cutoff: 0.5
+#fingerprinter_cache: K:/ms_data/resources/fingerprint-cache/fingerprint_cache.db
+fingerprinter_cache: /home/sf123/ctMSNovelist/data/fingerprint-cache/fingerprint_cache.db
+fingerprinter_path: /home/sf123/ctMSNovelist/fingerprint-wrapper/target/fingerprint-wrapper-bin-0.5.2.jar
+fingerprinter_threads: 10
+fp_map: /home/sf123/ctMSNovelist/data/csi_fingerid.csv
+java_memory: 2048
+
+device: cuda
+deviceID: 0
+decoder_config:
+  clip_invalid_counts: false
+  tokenization: tokens_process
