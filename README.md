@@ -1,27 +1,36 @@
-项目结构
-- MS_DATA (数据文件夹)
-    - combined_0824_v44.db 训练与验证数据
-    - complete_folds_smiles_holdout_me.pkl 测试数据, CANOPUS+GNPS+CASMI
-    - csi_fingerid.csv 分子指纹映射 8925-->3609
-- ctMSNovelist (工程文件夹)
-  - evaluation
-    - topk 存放测试结果
-      - m2
-      - m3
-      - ...
-      - m7
-      - t1
-      - t2
-    - weights_end 存放模型参数文件
-      - m2
-      - m3
-      - ...
-      - m7
-      - t1
-      - t2
-  - ... 
+## ctMSNovelist
 
-实验部分
+Paper: How to Train Your Neural Network for Molecular Structure Generation from Mass Spectra?
+
+Authors: Kai Zhao, Yanmin Liu, Longyang Dian, Shiwei Sun\*, Xuefeng Cui\*
+
+Contact: 202335247@mail.sdu.edu.cn, xfcui@email.sdu.edu.cn
+
+## Project structure
+
+- MS_DATA (Data folder)  
+    - combined_0824_v44.db:  Training and validation data
+    - complete_folds_smiles_holdout_me.pkl:  Test data, CANOPUS+GNPS+CASMI
+    - csi_fingerid.csv:  Molecular fingerprint mapping  8925-->3609
+- ctMSNovelist (Project folder)
+  - evaluation
+    - topk    (Store test results)
+      - m2
+      - m3
+      - ...
+      - m7
+      - t1
+      - t2
+    - weights_end   (Store the model parameter files)
+      - m2
+      - m3
+      - ...
+      - m7
+      - t1
+      - t2
+  - other files
+
+## Experiments
 
 |      |              |             |             |        |            | Params     |        | valid SMILES |        | correct MF |         |        |        | retrieval |
 | ---- | ------------ | ----------- | ----------- | ------ | ---------- | ---------- | ------ | ------------ | ------ | ---------- | ------- | ------ | ------ | --------- |
@@ -36,15 +45,13 @@
 | t1   | ×            | ×           | ×           | t1     | 128        | ms2smiles  | 80.11% | 100.00%      | 77.54% | 99.56%     | 42.23%  | 23.25% | 35.50% | 37.82%    |
 | t2   | √            | √           | √           | t2     | 128        | ms2smiles  | 78.28% | 100.00%      | 73.10% | 99.66%     | 50.61%  | 26.11% | 41.75% | 45.17%    |
 
-主实验：m7，m7.2
+**Main experiments：**m7，m7.2
 
-消融实验：m2~m7
+**Ablation experiments：**m2~m7
 
-副实验：t1，t2
+**Side experiments：**t1，t2
 
-
-
-运行命令
+**Command line interface**
 
 m2: python evaluate_loop_x.py --expmId m2
 
@@ -63,3 +70,8 @@ m7.2: python evaluate_loop_x.py --expmId m7 --beam_width=16
 t1: python evaluate_loop_x.py --expmId t1 --model_mode ms2smiles
 
 t2: python evaluate_loop_x.py --expmId t2 --model_mode ms2smiles
+
+## Dataset
+
+You can obtain all the data and model parameter files through the link https://doi.org/10.5281/zenodo.13982388.
+
