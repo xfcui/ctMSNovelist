@@ -6,29 +6,9 @@ Authors: Kai Zhao, Yanmin Liu, Longyang Dian, Shiwei Sun\*, Xuefeng Cui\*
 
 Contact: 202335247@mail.sdu.edu.cn, xfcui@email.sdu.edu.cn
 
-## Project structure
+## Dataset
 
-- MS_DATA (Data folder)  
-    - combined_0824_v44.db:  Training and validation data
-    - complete_folds_smiles_holdout_me.pkl:  Test data, CANOPUS+GNPS+CASMI
-    - csi_fingerid.csv:  Molecular fingerprint mapping  8925-->3609
-- ctMSNovelist (Project folder)
-  - evaluation
-    - topk    (Store test results)
-      - m2
-      - m3
-      - ...
-      - m7
-      - t1
-      - t2
-    - weights_end   (Store the model parameter files)
-      - m2
-      - m3
-      - ...
-      - m7
-      - t1
-      - t2
-  - other files
+You can obtain all the data and model parameter files through the link https://doi.org/10.5281/zenodo.13982388.
 
 ## Experiments
 
@@ -45,11 +25,17 @@ Contact: 202335247@mail.sdu.edu.cn, xfcui@email.sdu.edu.cn
 | t1   | ×            | ×           | ×           | t1     | 128        | ms2smiles  | 80.11% | 100.00%      | 77.54% | 99.56%     | 42.23%  | 23.25% | 35.50% | 37.82%    |
 | t2   | √            | √           | √           | t2     | 128        | ms2smiles  | 78.28% | 100.00%      | 73.10% | 99.66%     | 50.61%  | 26.11% | 41.75% | 45.17%    |
 
-**Main experiments：**m7，m7.2
+**Main experiments**
 
-**Ablation experiments：**m2~m7
+m7，m7.2
 
-**Side experiments：**t1，t2
+**Ablation experiments**
+
+m2~m7
+
+**Side experiments**
+
+t1，t2
 
 **Command line interface**
 
@@ -71,7 +57,19 @@ t1: python evaluate_loop_x.py --expmId t1 --model_mode ms2smiles
 
 t2: python evaluate_loop_x.py --expmId t2 --model_mode ms2smiles
 
-## Dataset
+## Project structure
 
-You can obtain all the data and model parameter files through the link https://doi.org/10.5281/zenodo.13982388.
+- **MS_DATA （Data folder）**  
+  - combined_0824_v44.db：  Training and validation data
+  - complete_folds_smiles_holdout_me.pkl：  Test data, CANOPUS+GNPS+CASMI
+  - csi_fingerid.csv：  Molecular fingerprint mapping  8925-->3609
+- **ctMSNovelist （Project folder）**
+  - evaluation
+    - topk    (Store test results)
+      - m2~m7
+      - t1~t2
+    - weights_end   (Store the model parameter files)
+      - m2~m7
+      - t1~t2
+  - other files
 
