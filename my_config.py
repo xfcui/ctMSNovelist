@@ -1,7 +1,7 @@
 import yaml
 
-CONFIG_DEFAULT = "/home/sf123/ctMSNovelist/config.yaml"
-
+# CONFIG_DEFAULT = "/home/sf123/ctMSNovelist/config.yaml"
+CONFIG_DEFAULT = "./config.yaml"
 config = {}
 
 
