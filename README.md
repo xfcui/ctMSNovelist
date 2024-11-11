@@ -13,7 +13,10 @@ chmod +x create_env.sh
 ./create_env.sh
 ```
 
-Notes: Remember to change the file paths in config.yaml and my_config.py to yours.
+Notes: 
+  1、You need to download jdk11 to the fp_management directory
+  2、You need to download [complete_folds_smiles_holdout_me.pkl](https://doi.org/10.5281/zenodo.13982388) and put it in the MS_DATA directory
+  3、You need to download the model parameter files and place them in the evaluation/weights_end directory
 
 ## Dataset
 
@@ -76,14 +79,10 @@ t2: python evaluate_loop_x.py --expmId t2 --model_mode ms2smiles
       - t1~t2
     - weights_end   (Store the model parameter files)
       - m2~m7
-      
       - t1~t2
-      
-        E:\biocourseDir\ctMSNovelist\\jdk-11.0.23
-  
-  fp_management
-  
-  - **MS_DATA （Data folder）**  
+  - fp_management
+    - jdk-11.0.23
+  - MS_DATA （Data folder）  
     - combined_0824_v44.db：  Training and validation data
     - complete_folds_smiles_holdout_me.pkl：  Test data, CANOPUS+GNPS+CASMI
     - csi_fingerid.csv：  Molecular fingerprint mapping  8925-->3609
