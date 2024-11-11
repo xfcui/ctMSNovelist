@@ -270,7 +270,7 @@ def calculate_metrics_folds(model_dict, fingerprinter, args):
         metrics_5_folds = pd.concat([metrics_5_folds, metrics_5], ignore_index=True)
 
         if require_pkl:
-            print(print(f"fold{cv_fold}, starting calculate top-k acc..."))
+            print(f"fold{cv_fold}, starting calculate top-k acc...")
 
             results_bool, results_mean, results_topk = rank_score_metrics(cv_fold=cv_fold,
                                                                           weight_file=weight_path,
@@ -362,7 +362,7 @@ def rank_score_metrics(cv_fold, weight_file, args):
     # logger.info(f"Scoring fingerprints for {n_results_ok} results with correct MF")
 
     # 1、计算得分
-    fp_map = fpm.FingerprintMap(mc.config["fp_map"])
+    fp_map = fpm.FingerprintMap(mc.config["map_path"])
     scores = msc.get_candidate_scores()
     results_ok = msc.compute_candidate_scores(results_ok, fp_map,
                                               additive_smoothing_n=n_total_,
@@ -667,7 +667,7 @@ def start_main():
     parser.add_argument('--eval_set', type=str, default="gnps", help='Evaluation set name')
     parser.add_argument('--cv_folds', type=int, default=10, help='Number of cross-validation folds')
     parser.add_argument('--retain_single_duplicate', action='store_true', help='Retain single duplicates')
-    parser.add_argument('--base_folder', type=str, default='/home/sf123/ctMSNovelist', help='Base folder path')
+    parser.add_argument('--base_folder', type=str, default='.', help='Base folder path')
 
     parser.add_argument('--weights_dir', type=str, help='Directory containing model weights')
     parser.add_argument('--pkl_folder', type=str, help='Directory containing model pkl results')

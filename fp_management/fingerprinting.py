@@ -16,6 +16,7 @@ import sqlite3
 from sqlite3 import Error
 import pickle
 from warnings import warn
+import my_config as mc
 
 try:
     import jpype as jp
@@ -48,7 +49,9 @@ class Fingerprinter:
         option_xmx = f"-Xmx{java_mem}m"
         option_xms = f"-Xms{java_mem}m"
         if not jp.isJVMStarted():
-            jvm_path = "/home/sf123/Java/jdk-11.0.23/lib/server/libjvm.so"
+            # jvm_path = "/home/sf123/Java/jdk-11.0.23/lib/server/libjvm.so"
+            jvm_path = mc.config["jvm_path"]
+            print(jvm_path)
             # jp.getDefaultJVMPath()
             jp.startJVM(jvm_path,
                         option_xmx, option_xms, "-Djava.class.path=" + lib_path,
