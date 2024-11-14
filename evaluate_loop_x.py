@@ -656,10 +656,10 @@ def start_main():
     parser = argparse.ArgumentParser(description='Process some integers.')
 
     # 添加命令行参数
-    parser.add_argument('--expmId', type=str, default="m2", help='Experiment ID')
+    parser.add_argument('--expmId', type=str, default="t2", help='Experiment ID')
     parser.add_argument('--beam_width', type=int, default=128, help='Beam width for decoding')
     # msnovelist ms2smiles
-    parser.add_argument('--model_mode', type=str, default="msnovelist", help='Model mode')
+    parser.add_argument('--model_mode', type=str, default="ms2smiles", help='Model mode')
     # parser.add_argument('--require_pkl', action='store_true', help='Require PKL flag')
 
     parser.add_argument('--deviceID', type=int, default=0, help='Device ID to use')
@@ -674,9 +674,9 @@ def start_main():
     parser.add_argument('--ctFlag', action='store_true', help='CT flag')
 
     args = parser.parse_args()
-    args.require_pkl = True
+    args.require_pkl = False
     print(f"require_pkl: {args.require_pkl}")
-    if args.expmId in ["m3", "m5", "m7"]:
+    if args.expmId in ["m3", "m5", "m7", "t2"]:
         args.ctFlag = True
     else:
         args.ctFlag = False
@@ -707,7 +707,8 @@ def start_main():
                                                            out_size=decoder_output_size)
         model_transvae = model_msnovelist.TransVAEModel()
     elif args.model_mode == "ms2smiles":
-        decoder_input_size += 512
+        # decoder_input_size += 512
+        decoder_input_size += (256 + 11)
         model_encode = model_ms2smiles.EncoderModel(config=mc.config, decoder_input_size=decoder_input_size,
                                                     out_size=decoder_output_size)
         model_decode = model_ms2smiles.DecoderModel(config=mc.config, decoder_input_size=decoder_input_size,
