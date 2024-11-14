@@ -674,7 +674,7 @@ def start_main():
     parser.add_argument('--ctFlag', action='store_true', help='CT flag')
 
     args = parser.parse_args()
-    args.require_pkl = False
+    args.require_pkl = True
     print(f"require_pkl: {args.require_pkl}")
     if args.expmId in ["m3", "m5", "m7", "t2"]:
         args.ctFlag = True
