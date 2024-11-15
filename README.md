@@ -14,17 +14,7 @@ chmod +x create_env.sh
 ```
 
 Notes: 
-<<<<<<< HEAD
-	1、You need to download jdk11 to the fp_management directory.
 
-​	2、You need to download [complete_folds_smiles_holdout_me.pkl](https://doi.org/10.5281/zenodo.13982388) and put it in the MS_DATA directory.
-
-​	3、You need to download the model parameter files and place them in the evaluation/weights_end directory.
-
-## Dataset
-
-You can obtain all the data and model parameter files through the link https://doi.org/10.5281/zenodo.13982388.
-=======
 1、You need to download [jdk11](https://zenodo.org/records/14168787) to the **fp_management** directory.
 
 2、You need to download [complete_folds_smiles_holdout_me.pkl](https://zenodo.org/records/14168787) and put it in the **MS_DATA** directory.
@@ -34,7 +24,6 @@ You can obtain all the data and model parameter files through the link https://d
 ## Dataset
 
 You can obtain all the data and model parameter files through the link https://zenodo.org/records/14168787.
->>>>>>> 5eab2b8 (update readme)
 
 ## Experiments
 
