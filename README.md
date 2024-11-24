@@ -15,15 +15,15 @@ chmod +x create_env.sh
 
 Notes: 
 
-1、You need to download [jdk11](https://zenodo.org/records/14168787) to the **fp_management** directory.
+1、You need to download [jdk11](https://zenodo.org/records/14202770) to the **fp_management** directory.
 
-2、You need to download [complete_folds_smiles_holdout_me.pkl](https://zenodo.org/records/14168787) and put it in the **MS_DATA** directory.
+2、You need to download [complete_folds_smiles_holdout_me.pkl](https://zenodo.org/records/14202770) and put it in the **MS_DATA** directory.
 
-3、You need to download the [model parameter files](https://zenodo.org/records/14168787) and place them in the **evaluation/weights_end** directory.
+3、You need to download the [model parameter files](https://zenodo.org/records/14202770) and place them in the **evaluation/weights_end** directory.
 
 ## Dataset
 
-You can obtain all the data and model parameter files through the link https://zenodo.org/records/14168787.
+You can obtain all the data and model parameter files through the link https://zenodo.org/records/14202770.
 
 ## Experiments
 
@@ -75,7 +75,7 @@ t2: python evaluate_loop_x.py --expmId t2 --model_mode ms2smiles
 
 
 ## Project structure
-- **ctMSNovelist （Project folder）**
+- **ctMSNovelist**
   - evaluation
     - topk    (Store test results)
       - m2~m7
