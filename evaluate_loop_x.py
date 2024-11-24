@@ -656,10 +656,10 @@ def start_main():
     parser = argparse.ArgumentParser(description='Process some integers.')
 
     # 添加命令行参数
-    parser.add_argument('--expmId', type=str, default="t2", help='Experiment ID')
+    parser.add_argument('--expmId', type=str, default="m2", help='Experiment ID')
     parser.add_argument('--beam_width', type=int, default=128, help='Beam width for decoding')
     # msnovelist ms2smiles
-    parser.add_argument('--model_mode', type=str, default="ms2smiles", help='Model mode')
+    parser.add_argument('--model_mode', type=str, default="msnovelist", help='Model mode')
     # parser.add_argument('--require_pkl', action='store_true', help='Require PKL flag')
 
     parser.add_argument('--deviceID', type=int, default=0, help='Device ID to use')
